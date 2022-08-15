@@ -5,4 +5,11 @@ with open('books.csv', newline='') as f:
     reader = DictReader(f)
 
     for row in reader:
-        books += [row]
+        tmp = {
+            'title': row['Title'],
+            'author': row['Author'],
+            'pages': row['Pages'],
+            'genre': row['Genre']
+
+        }
+        books += [tmp]
